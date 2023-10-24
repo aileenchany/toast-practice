@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import ToastContext from "./ToastService";
 import { X } from 'react-feather'
+import { LogIn, AlertCircle, Zap, Shield } from 'react-feather'
+import ToastSuccess from './ToastSuccess'
 
 // type Props {
 //   children: JSX.Element
@@ -20,8 +22,15 @@ export default function ToastProvider({ children }) {
     setToasts((toasts) => toasts.filter((toast) => toast.id !== id))
   }
 
+  const success = (message) => {
+    const id = open(
+      <ToastSuccess message={message} />
+    , 1000)
+    close(id)
+  }
+
   return (
-    <ToastContext.Provider value={{ open, close }}>
+    <ToastContext.Provider value={{ open, close, success }}>
       {children}
       <div className="space-y-2 absolute bottom-4 right-4">
         {toasts.map(({ id, component }) => (

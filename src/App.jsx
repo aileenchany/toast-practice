@@ -32,17 +32,21 @@ function App() {
     toast.close(id)
   }
 
+  // const handleActivate = () => {
+  //   const id = toast.open(
+  //     <div className='flex gap-2 bg-green-300 text-green-800 p-4 rounded-lg shadow-lg'>
+  //       <Zap size={40} />
+  //       <div>
+  //         <h3 className='font-bold'>Activated</h3>
+  //         <p className='text-sm'>Item activated successfully</p>
+  //       </div>
+  //     </div>
+  //   , 1000)
+  //   toast.close(id)
+  // }
+
   const handleActivate = () => {
-    const id = toast.open(
-      <div className='flex gap-2 bg-green-300 text-green-800 p-4 rounded-lg shadow-lg'>
-        <Zap size={40} />
-        <div>
-          <h3 className='font-bold'>Activated</h3>
-          <p className='text-sm'>Item activated successfully</p>
-        </div>
-      </div>
-    , 1000)
-    toast.close(id)
+    toast.success("Activated Successfully")
   }
 
   return (
